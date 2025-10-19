@@ -4,4 +4,25 @@
   <h1>Indumentaria Online</h1>
   <p>Bienvenido a nuestro sitio.</p>
   <a href="{% url 'contacto' %}">Ir a contacto</a>
+  <a href="{% url 'nueva_remera' %}">Agregar nueva remera</a>
+
+  <h2>Catálogo de remeras</h2>
+  <table border="1">
+    <tr>
+      <th>Marca</th>
+      <th>Talle</th>
+      <th>Color</th>
+      <th>Lisa</th>
+      <th>Género</th>
+    </tr>
+    {% for remera in remeras %}
+    <tr>
+      <td>{{ remera.marca }}</td>
+      <td>{{ remera.get_talle_display }}</td>
+      <td>{{ remera.color }}</td>
+      <td>{% if remera.lisa %}Sí{% else %}No{% endif %}</td>
+      <td>{{ remera.get_genero_display }}</td>
+    </tr>
+    {% endfor %}
+  </table>
 {% endblock %}
