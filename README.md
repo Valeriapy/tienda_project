@@ -1,13 +1,13 @@
 
-# 🛍️ Tienda - Proyecto Integrador (Etapa 1)
+# Tienda - Proyecto Integrador (Etapa 1)
 
-## 🌱 Descripción general
+## Descripción general
 Este proyecto es una **tienda online básica** desarrollada con **Django** como parte de un proyecto integrador con fines educativos.  
 En esta primera etapa, se construyó la **estructura base del sitio**, incluyendo la configuración del entorno, la creación de una app llamada `shop`, el sistema de templates, archivos estáticos y la conexión del servidor local.  
 
 ---
 
-## 🎯 Objetivo de la Etapa 1
+##  Objetivos de la Etapa 1
 - Crear el entorno de desarrollo virtual.  
 - Iniciar el proyecto Django y la aplicación `shop`.  
 - Configurar la estructura de carpetas (`templates` y `static`).  
@@ -17,23 +17,24 @@ En esta primera etapa, se construyó la **estructura base del sitio**, incluyend
 
 ---
 
-## 🧩 Tecnologías utilizadas
-- **Python 3.10 o superior**
-- **pip** (administrador de paquetes)
-- **Virtualenv** (entorno virtual)
-- **Django 5.x**
+##  Tecnologías utilizadas
+- Python 3.10 o superior**
+- pip (administrador de paquetes)
+- Virtualenv (entorno virtual)
+- Django 5.x
 
 ---
 
 ## ⚙️ Instalación y ejecución
 
-### 1️. Clonar el repositorio
-```bash
+
+### 1. Clonar el repositorio
+
 git clone https://github.com/Valeria.py/tienda-project.git
 cd tienda-project
 
 ### 2. Crear entorno virtual
-```bash
+
 python -m venv venv
 
 ### 3. Activar entorno virtual
@@ -52,7 +53,7 @@ Abrí en el navegador:
 http://127.0.0.1:8000/shop/
 http://127.0.0.1:8000/shop/contacto/
 
-Estructura de archivos (Etapa 1)
+### Estructura de archivos (Etapa 1)
 
 tienda_project/
 │
@@ -80,7 +81,7 @@ tienda_project/
 ├── requirements.txt
 └── README.md
 
-Detalles técnicos de la Etapa 1
+### Detalles técnicos de la Etapa 1
 
 Se configuraron las rutas principales:
 
@@ -98,13 +99,13 @@ El logo redirige al inicio usando:
     <img src="{% static 'shop/logo.png' %}" alt="Logo" style="height:80px;">
 </a>
 
-Git y control de versiones
+### Git y control de versiones
 
 Repositorio remoto:
 https://github.com/Valeria.py/tienda-project
 
 
-📍 Estado actual
+### Estado actual
 
 ✅ Proyecto funcionando en servidor local
 ✅ Estructura de templates y estáticos creada
