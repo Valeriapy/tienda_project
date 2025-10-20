@@ -67,7 +67,7 @@ tienda_project/
 ├── requirements.txt
 └── README.md
 
-Detalles técnicos de la Etapa 1
+### Detalles técnicos de la Etapa 1:
 
 Rutas principales configuradas:
 
@@ -84,7 +84,7 @@ El logo redirige al inicio con <a href="{% url 'index' %}">.
 Git y control de versiones
 Repositorio remoto: https://github.com/Valeria.py/tienda_project
 
-Estado actual
+### Estado actual
 Proyecto funcionando en servidor local.
 
 Estructura de templates y estáticos creada.
@@ -93,11 +93,11 @@ Logo agregado correctamente.
 
 Subido a GitHub.
 
-Etapa 2
+## Etapa 2
 Descripción general
 En esta etapa se agregaron formularios y modelos para administrar un catálogo (sólo de remeras para facilitar la tarea), permitiendo que los administradores carguen nuevas remeras y que se muestren en la página de inicio.
 
-Objetivos de la Etapa 2
+### Objetivos de la Etapa 2
 Crear modelo Remera con campos:
 
 marca (Texto)
@@ -126,21 +126,21 @@ Actualizar template index.html para mostrar tabla de catálogo y enlaces al fina
 
 Configurar URL /shop/nueva-remera/.
 
-Tecnologías utilizadas
+### Tecnologías utilizadas
 Django ORM para modelos
 
 Django Forms para formularios
 
 Plantillas Django ({% extends %} y {% block %})
 
-Instalación y ejecución
+### Instalación y ejecución
 1. Abrir servidor local como en Etapa 1.
 
 2. Navegar a /shop/nueva-remera/ para agregar nuevas remeras.
 
 3. Verificar que la tabla de catálogo se actualice automáticamente en la página de inicio.
 
-Flujo de Git
+### Flujo de Git
 1. Creación de rama para no comprometer la rama main:
 
 git checkout -b etapa2-remeras
@@ -170,7 +170,7 @@ Verificación de formulario RemeraForm y guardado de datos.
 
 Visualización de tabla de catálogo en index.html.
 
-Estado actual
+### Estado actual
 Proyecto funcionando en servidor local.
 
 Formularios y modelo de remeras funcionando.
