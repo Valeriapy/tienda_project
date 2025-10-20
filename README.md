@@ -1,3 +1,6 @@
+
+---
+
 # Tienda - Proyecto Integrador
 
 ## Etapa 1
@@ -22,32 +25,46 @@ En esta primera etapa se construyó la estructura base del sitio, incluyendo la 
 
 ### Instalación y ejecución
 1. Clonar el repositorio:
+```bash
 git clone https://github.com/Valeria.py/tienda_project.git
 cd tienda_project
+````
+
 2. Crear entorno virtual:
+
+```bash
 python -m venv venv
+```
 
 3. Activar entorno virtual:
-Windows (Git Bash):
+
+```bash
+# Windows (Git Bash)
 source venv/Scripts/activate
 
-Linux/Mac:
+# Linux/Mac
 source venv/bin/activate
+```
 
 4. Instalar dependencias:
+
+```bash
 pip install -r requirements.txt
+```
 
 5. Ejecutar el servidor:
+
+```bash
 python manage.py runserver
+```
 
 6. Abrir en el navegador:
+   Página de inicio: [http://127.0.0.1:8000/shop/](http://127.0.0.1:8000/shop/)
+   Página de contacto: [http://127.0.0.1:8000/shop/contacto/](http://127.0.0.1:8000/shop/contacto/)
 
-Página de inicio: http://127.0.0.1:8000/shop/
+### Estructura de archivos (Etapa 1)
 
-Página de contacto: http://127.0.0.1:8000/shop/contacto/
-
-Estructura de archivos (Etapa 1)
-
+```
 tienda_project/
 ├── manage.py
 ├── tienda/
@@ -66,120 +83,134 @@ tienda_project/
 ├── .gitignore
 ├── requirements.txt
 └── README.md
+```
 
-### Detalles técnicos de la Etapa 1:
+### Detalles técnicos de la Etapa 1
 
-Rutas principales configuradas:
+* Rutas principales configuradas:
 
-/shop/ → Página de inicio
+  * `/shop/` → Página de inicio
+  * `/shop/contacto/` → Página de contacto
+* Logo agregado en `static/shop/logo.png`, visible en el encabezado de todas las páginas.
+* Templates usan herencia (`base.html`) y bloques de contenido (`{% block content %}`) para mantener consistencia.
+* El logo redirige al inicio con `<a href="{% url 'index' %}">`.
+* Git y control de versiones:
 
-/shop/contacto/ → Página de contacto
-
-Logo agregado en static/shop/logo.png, visible en el encabezado de todas las páginas.
-
-Templates usan herencia (base.html) y bloques de contenido ({% block content %}) para mantener consistencia.
-
-El logo redirige al inicio con <a href="{% url 'index' %}">.
-
-Git y control de versiones
-Repositorio remoto: https://github.com/Valeria.py/tienda_project
+  * Repositorio remoto: [https://github.com/Valeria.py/tienda_project](https://github.com/Valeria.py/tienda_project)
 
 ### Estado actual
-Proyecto funcionando en servidor local.
 
-Estructura de templates y estáticos creada.
+* Proyecto funcionando en servidor local.
+* Estructura de templates y estáticos creada.
+* Logo agregado correctamente.
+* Subido a GitHub.
 
-Logo agregado correctamente.
-
-Subido a GitHub.
+---
 
 ## Etapa 2
-Descripción general
-En esta etapa se agregaron formularios y modelos para administrar un catálogo (sólo de remeras para facilitar la tarea), permitiendo que los administradores carguen nuevas remeras y que se muestren en la página de inicio.
+
+### Descripción general
+
+En esta etapa se agregaron formularios y modelos para administrar un catálogo (sólo de remeras), permitiendo que los administradores carguen nuevas remeras y que se muestren en la página de inicio.
 
 ### Objetivos de la Etapa 2
-Crear modelo Remera con campos:
 
-marca (Texto)
+* Crear modelo `Remera` con campos:
 
-talle (Opciones: XS, S, M, L, XL, XXL)
+  * `marca` (Texto)
+  * `talle` (Opciones: XS, S, M, L, XL, XXL)
+  * `color` (Texto)
+  * `lisa` (Boolean)
+  * `genero` (Opciones: Hombre, Mujer, Unisex)
+* Aplicar migraciones correspondientes.
+* Crear formulario `RemeraForm` usando `ModelForm`.
+* Crear vistas:
 
-color (Texto)
-
-lisa (Boolean)
-
-genero (Opciones: Hombre, Mujer, Unisex)
-
-Aplicar migraciones correspondientes.
-
-Crear formulario RemeraForm usando ModelForm.
-
-Crear vistas:
-
-index: mostrar catálogo completo de remeras.
-
-nueva_remera: formulario GET/POST para ingresar nuevas remeras.
-
-Agregar template nueva_remera.html con formulario.
-
-Actualizar template index.html para mostrar tabla de catálogo y enlaces al final.
-
-Configurar URL /shop/nueva-remera/.
+  * `index`: mostrar catálogo completo de remeras.
+  * `nueva_remera`: formulario GET/POST para ingresar nuevas remeras.
+* Agregar template `nueva_remera.html` con formulario.
+* Actualizar template `index.html` para mostrar tabla de catálogo y enlaces al final.
+* Configurar URL `/shop/nueva-remera/`.
 
 ### Tecnologías utilizadas
-Django ORM para modelos
 
-Django Forms para formularios
-
-Plantillas Django ({% extends %} y {% block %})
+* Django ORM para modelos
+* Django Forms para formularios
+* Plantillas Django (`{% extends %}` y `{% block %}`)
 
 ### Instalación y ejecución
+
 1. Abrir servidor local como en Etapa 1.
-
-2. Navegar a /shop/nueva-remera/ para agregar nuevas remeras.
-
+2. Navegar a `/shop/nueva-remera/` para agregar nuevas remeras.
 3. Verificar que la tabla de catálogo se actualice automáticamente en la página de inicio.
 
 ### Flujo de Git
-1. Creación de rama para no comprometer la rama main:
 
+1. Creación de rama para no comprometer la rama `main`:
+
+```bash
 git checkout -b etapa2-remeras
+```
 
-Pruebas en shell de Django
+2. Pruebas en shell de Django.
+3. Merge a `main`:
 
-Merge a main:
-
+```bash
 git checkout main
 git merge etapa2-remeras
 git push origin main
-Commit vacío opcional para documentación:
+```
 
+4. Commit vacío opcional para documentación:
+
+```bash
 git commit --allow-empty -m "Merge completado desde rama etapa2-remeras (práctica de trabajo con ramas y commits)"
 git push origin main
+```
 
-Pruebas realizadas
-Creación de objetos Remera en shell:
+### Pruebas realizadas
 
-python
+* Creación de objetos `Remera` en shell:
 
+```python
 from shop.models import Remera
 r = Remera(marca="Nike", talle=3, color="Negro", lisa=True, genero=3)
 r.save()
 Remera.objects.all()
-Verificación de formulario RemeraForm y guardado de datos.
+```
 
-Visualización de tabla de catálogo en index.html.
+* Verificación de formulario `RemeraForm` y guardado de datos.
+* Visualización de tabla de catálogo en `index.html`.
 
 ### Estado actual
-Proyecto funcionando en servidor local.
 
-Formularios y modelo de remeras funcionando.
+* Proyecto funcionando en servidor local.
+* Formularios y modelo de remeras funcionando.
+* Tabla de catálogo visible en `index.html`.
+* Todas las etapas subidas a GitHub y documentadas.
 
-Tabla de catálogo visible en index.html.
+---
 
-Todas las etapas subidas a GitHub y documentadas.
+## Etapa 3.1 — Modelo y formulario
 
-Licencia
+La etapa 3.1 pedía reemplazar los campos de texto libre `talle` y `género` por campos con opciones predefinidas (`choices`) y mostrar en las plantillas las etiquetas correspondientes en lugar de los números.
+
+### Nota sobre el proyecto
+
+Estos cambios ya estaban implementados desde el inicio del proyecto:
+
+* En el modelo `Remera`, los campos `talle` y `genero` usan `choices` y se almacenan como números, pero se muestran con texto legible (`XS`, `M`, `Unisex`, etc.).
+* En la plantilla, se usan `{{ remera.get_talle_display }}` y `{{ remera.get_genero_display }}` para mostrar los valores correctamente.
+* El formulario `RemeraForm` genera automáticamente los menús desplegables gracias a los `choices`.
+
+### Conclusión
+
+No fue necesario realizar modificaciones adicionales, ya que el proyecto cumple con lo solicitado en este punto.
+
+---
+
+## Licencia
+
 MIT License
 
 Copyright (c) 2025 Valeria Echeveste
@@ -201,3 +232,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+```
+
+---
