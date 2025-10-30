@@ -1,4 +1,3 @@
-Perfecto, acá te armé un README limpio, ordenado y profesional, combinando **Etapa 1, 2, 3.1 y 3.2**, sin emojis y con formato consistente:
 
 ---
 
