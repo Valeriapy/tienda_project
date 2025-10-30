@@ -16,7 +16,7 @@ SECRET_KEY = "i#q4boflh%75m@yg-ug3owbm24bw$7uxk6zkh&#)0=3un7hmkr"
 DEBUG = False
 
 
-ALLOWED_HOSTS = ["valeriapy.pythonanywhere.com", "localhost", "127.0.0.1"]
+ALLOWED_HOSTS = ["valeriapy.pythonanywhere.com"]
 
 
 INSTALLED_APPS = [
@@ -25,8 +25,8 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'shop', 
+    'django.contrib.staticfiles',  
+    'shop',
 ]
 
 MIDDLEWARE = [
