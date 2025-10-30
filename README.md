@@ -138,13 +138,11 @@ class RemeraAdmin(admin.ModelAdmin):
 
 * Uso de `get_talle_display()` y `get_genero_display()` para mostrar valores legibles.
 * Configuración de idioma español (`LANGUAGE_CODE = 'es'` en `settings.py`).
-* Mensajes de confirmación genéricos como *“Su producto fue agregado correctamente”*.
 
 **Resultado:**
 
 * La creación, edición y eliminación de remeras se realiza únicamente desde el **administrador de Django**.
 * La página principal muestra el catálogo correctamente.
-* Proyecto alineado con las buenas prácticas del curso.
 
 ---
 
